@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as signalR from "@microsoft/signalr"
 
 
-const URL = "http://localhost:5092"
+const URL = "https://chatting-dat-lom.somee.com"
 function Chat({ tags }) {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
