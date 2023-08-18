@@ -25,7 +25,7 @@ function Chat({ tags }) {
     useEffect(() => {
       handleGetAll(tags)
       const newConnection = new signalR.HubConnectionBuilder()
-      .withUrl("http://localhost:5092/chathub")
+      .withUrl(`${URL}/chathub`)
       .configureLogging(signalR.LogLevel.Information).build();
       setConnection(newConnection);
       newConnection.start().then(()=>{
