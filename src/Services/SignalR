@@ -1,0 +1,21 @@
+import axios from 'axios';
+
+const URL = "http://localhost:5092"; 
+
+  const sendMessage = async (messageDto) => {
+  try {
+    const response = await axios.post(`${URL}/chat/sendmessage`, messageDto);
+    return response.data; 
+  } catch (error) {
+    console.error('Error sending message:', error);
+    throw error;
+  }
+};
+
+  const filterMessages = async (tags) => {
+  
+    await axios.post(`${URL}/chat/filter`, tags)
+    .then(response =>response.data.map(item =>({message:data.message,
+        tags:item.tags.split(",")}))).catch(error => console.log(error));
+  }
+  export  {sendMessage, filterMessages}
